@@ -1,7 +1,7 @@
 # Assignment 1
 ## There are a total of 5 tasks in this assignment.<br >
 - The first, second and third tasks are in one contract called ```one.sol```
-- Tasks four and five are in their own separate contracts ```two.sol```,```three.sol```
+- Tasks four and five are in their own separate contracts ```two.sol```, ```three.sol```
 ## Tasks
 ```Task1```<br >
 A function that takes 5 numbers and returns their average<br >
