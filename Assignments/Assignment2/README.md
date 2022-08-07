@@ -2,6 +2,7 @@
 ## There are a total of 2 tasks in this assignment.<br >
 - The first is in one contract called ```Part1.sol```
 - The second and third tasks are in a separate contract called ```Part2.sol```
+- Both of the contracts are deployed on the Goerli Ethereum test network
 ## Tasks
 ### Task1
 - A contract that implements the storage of multiple instances of the struct ```Instructors```
