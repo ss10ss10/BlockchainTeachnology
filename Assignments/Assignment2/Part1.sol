@@ -1,4 +1,4 @@
-// Contract address: 0x805907b0a3322f22f9a03de02a2eb09a68415d3e
+// Contract address: 0x2eae9a5b4b33e2bc5a8d9dab287899bad4662014
 
 // Six teachers
 // 0x08F3b172952b45Df038890aE369e1999629de58c
@@ -13,9 +13,10 @@ pragma solidity ^0.5.0;
 
 contract Assignment2 {
     uint totalInstr;
+    enum Status{Active, Inactive}
 
-    struct Instructor{
-        string status;
+    struct Instructor {
+        Status status;
         string fname;
         string lname;
         uint office;
@@ -33,7 +34,7 @@ contract Assignment2 {
         totalInstr = 0;
     }
 
-    function setInstructor(address _addrInst, string memory _fname, string memory _lname, uint _office, uint _phone, string memory _domain, string memory _status) public {
+    function setInstructor(address _addrInst, string memory _fname, string memory _lname, uint _office, uint _phone, string memory _domain, Status _status) public {
         
         /*
             Purpose: Lets the only the owner of the contract add new Instructors
@@ -48,7 +49,16 @@ contract Assignment2 {
         totalInstr += 1;
     }
     
-    function getInstructor(address addr) public view returns (string memory, string memory, uint, uint, string memory, string memory) {
+    function setStatus(address _addrInst, Status _status) public {
+        require (msg.sender == owner, "You do not have the admin privilages to set status!");
+        for (uint i = 0; i < addresses.length; i++) {
+            if (addresses[i] == _addrInst) {
+                instrLst[_addrInst].status = _status;
+            }
+        }
+    } 
+
+    function getInstructor(address addr) public view returns (string memory, string memory, uint, uint, string memory, Status) {
         
         /*
             Purpose: to get all of the attributes of an instructor if instructor address found in the instructor list.
