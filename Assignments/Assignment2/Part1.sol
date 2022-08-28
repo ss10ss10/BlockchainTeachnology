@@ -37,7 +37,7 @@ contract Assignment2 {
     function setInstructor(address _addrInst, string memory _fname, string memory _lname, uint _office, uint _phone, string memory _domain, Status _status) public {
         
         /*
-            Purpose: Lets the only the owner of the contract add new Instructors
+            Purpose: Lets only the owner of the contract add new Instructors
             Input params: address of instructor (type address), first name (type sting), last name (type sting), office number (type uint),
                             phone number (type uint), domain (type sting), status (type sting).
             Returns: NOTHING, only makes and Instructor object and places it into instructor list against an address.
